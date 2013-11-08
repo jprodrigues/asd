@@ -1,0 +1,30 @@
+nib = input ('Introduza o NIB -> ')
+#nib = list (nib)
+#soma = 0
+soma_final = 0
+
+if (len(nib)!=21):
+     print('Apenas são permitidos vinte e um digitos')
+#     nib = input ('Introduza o NIB -> ')
+
+for x in range (len(nib)-2):
+     soma_final = soma_final + int(nib[x])
+     soma_final = (soma_final * 10) % 97
+     
+soma_final = (soma_final * 10)
+
+soma_final = soma_final % 97
+
+soma_final = 98 - soma_final
+
+ultimos_2_digitos = int(nib[19] + nib[20])
+
+
+#if soma_final < 10:
+#     soma_final = '0' + soma_final
+print(soma_final)
+
+if soma_final == ultimos_2_digitos:
+     print ('Nib Valido')
+else:
+     print ('Nib Invalido')
